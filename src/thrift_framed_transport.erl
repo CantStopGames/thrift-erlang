@@ -102,10 +102,4 @@ read(State0 = #framed_transport{wrapped = Wrapped0, read_buffer = RBuf},
           {ok, Data} }
     end.
 
-%%--------------------------------------------------------------------
-%% Internal functions
-%%--------------------------------------------------------------------
-
-min(A,B) when A<B -> A;
-min(_,B)          -> B.
 
