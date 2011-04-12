@@ -339,7 +339,8 @@ new_protocol_factory(TransportFactory, Options) ->
                           Transport,
                           [{strict_read,  ParsedOpts#tbp_opts.strict_read},
                            {strict_write, ParsedOpts#tbp_opts.strict_write}]);
-                    {error, Error} -> Error
+                    {error, Error} ->
+                        {error, Error}
                 end
         end,
     {ok, F}.
