@@ -59,6 +59,7 @@ new(Host, Port, Service, Options)
     case ProtocolFactory() of
         {ok, Protocol} ->
             thrift_client:new(Protocol, Service);
-        {error, Error} ->
-            throw({error, Error})
+        Error ->
+            Error
     end.
+
