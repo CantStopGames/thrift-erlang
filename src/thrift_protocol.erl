@@ -352,7 +352,7 @@ write(Proto0, {{map, KeyType, ValType}, Data}) ->
                            vtype = term_to_typeid(ValType),
                            size  = dict:size(Data)
                           }),
-    Proto2 = dict:fold(fun(KeyData, ValData, ProtoS0) ->
+    Proto2 = dict:fold(fun(KeyData, [ValData], ProtoS0) ->
                                {ProtoS1, ok} = write(ProtoS0, {KeyType, KeyData}),
                                {ProtoS2, ok} = write(ProtoS1, {ValType, ValData}),
                                ProtoS2
